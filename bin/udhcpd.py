@@ -1,3 +1,31 @@
+import sys
+
+proc=None
+
+def __main__(args):
+
+    if len(args) == 1:
+
+        import udhcpdserver
+        
+        dport=21
+        
+        if args[0]=="start":
+            print(f"Starting udhcpd service on port {dport}")
+            udhcpdserver.start(port=dport, verbose=0)
+            
+        elif args[0]=="stop":
+            udhcpdserver.stop()
+            del sys.modules["uftpdserver"]
+
+        elif args[0]=="restart":
+            udhcpdserver.restart()
+
+        else:
+            print("Invalid argument")
+    else:
+        print ("udhcpd, udhcpd <options>, start, stop, restart")
+
 """
   $Id: dhcpd.py,v 1.1 2026/02/16 23:52:40 gaijin Exp $
 
