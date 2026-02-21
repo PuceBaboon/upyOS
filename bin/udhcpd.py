@@ -8,7 +8,7 @@ def __main__(args):
 
         import udhcpdserver
         
-        dport=21
+        dport=67
         
         if args[0]=="start":
             print(f"Starting udhcpd service on port {dport}")
