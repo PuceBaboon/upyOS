@@ -654,7 +654,8 @@ export h = 192.168.2.132 # mqtt server (ex. Mosquitto)
 mqttc pub -h $h -t "home/bedroom/temp" -m "25"
 mqttc sub -t "#"
 mqttc listsub -t "#"
-mqttc unsub -t "#"
+mqttc unsub -t 
+mqttc -l sub -t "home/bedroom/temp"   ## Streaming output.
 
 ```
 
@@ -669,6 +670,7 @@ atmqttc sub -t "#"
 atmqttc listen
 atmqttc listsub -t "#"
 atmqttc unsub -t "#"
+atmqttc -l sub -t "home/bedroom/temp"   ## Streaming output.
 
 ```
 ---
